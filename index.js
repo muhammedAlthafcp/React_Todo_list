@@ -4,7 +4,7 @@
 
   let hello = <h1>hello  good </h1>
 
-  const ha= <h3>i am</h3>
+  const ha= <h3>i am new student</h3>
     
   
 
