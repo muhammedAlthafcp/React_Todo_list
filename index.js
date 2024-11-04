@@ -29,7 +29,7 @@
       </div>
     );
   }
-  export default index;
+  export default App;
 
     
   
