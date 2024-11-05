@@ -29,7 +29,6 @@
       </div>
     );
   }
-
   export default App;
 
     
