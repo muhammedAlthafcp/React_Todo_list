@@ -6,9 +6,21 @@ const HomePage = () => {
 
   const addTodo = () => {
     if (newTodo.trim()) {
-      setTodos([...todos, newTodo]);
+      setTodos([...todos, { id: Date.now(), text: newTodo, status: false }]);
       setNewTodo(''); // Clear input after adding
     }
+  };
+
+  const toggleStatus = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, status: !todo.status } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -30,17 +42,29 @@ const HomePage = () => {
         <i onClick={addTodo} className="fas fa-plus"></i>
       </div>
       <div className="todos">
-        {todos.map((todo, index) => (
-          <div key={index} className="todo">
+        {todos.map((todo) => (
+          <div className="todo" key={todo.id}>
             <div className="left">
-              <input type="checkbox" />
-              <p>{todo}</p>
+              <input
+                type="checkbox"
+                checked={todo.status}
+                onChange={() => toggleStatus(todo.id)}
+              />
+              <p>{todo.text}</p>
             </div>
             <div className="right">
-              <i className="fas fa-times"></i>
+              <i
+                onClick={() => deleteTodo(todo.id)}
+                className="fas fa-times"
+              ></i>
             </div>
           </div>
         ))}
+        {todos
+          .filter((todo) => todo.status)
+          .map((todo) => (
+            <h1 key={todo.id}>{todo.text}</h1>
+          ))}
       </div>
     </div>
   );
