@@ -22,7 +22,6 @@ const HomePage = () => {
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-
   return (
     <div className="app">
       <div className="mainHeading">
