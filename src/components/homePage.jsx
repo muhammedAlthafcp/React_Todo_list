@@ -10,6 +10,7 @@ const HomePage = () => {
       setNewTodo(''); // Clear input after adding
     }
   };
+  
   const toggleStatus = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -17,7 +18,7 @@ const HomePage = () => {
       )
     );
   };
-  
+
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
