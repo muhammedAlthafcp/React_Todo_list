@@ -52,8 +52,7 @@ const HomePage = () => {
               <p>{todo.text}</p>
             </div>
             <div className="right">
-              <i
-              
+              <i            
                 onClick={() => deleteTodo(todo.id)}
                 className="fas fa-times"
               ></i>
