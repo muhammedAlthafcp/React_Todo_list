@@ -10,7 +10,7 @@ const HomePage = () => {
       setNewTodo(''); // Clear input after adding
     }
   };
-  
+
   const toggleStatus = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -53,6 +53,7 @@ const HomePage = () => {
             </div>
             <div className="right">
               <i
+              
                 onClick={() => deleteTodo(todo.id)}
                 className="fas fa-times"
               ></i>
