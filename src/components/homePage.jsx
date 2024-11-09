@@ -58,6 +58,7 @@ const HomePage = () => {
               ></i>
             </div>
           </div>
+          
         ))}
         {todos
           .filter((todo) => todo.status)
