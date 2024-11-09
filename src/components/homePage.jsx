@@ -57,8 +57,7 @@ const HomePage = () => {
                 className="fas fa-times"
               ></i>
             </div>
-          </div>
-          
+          </div>         
         ))}
         {todos
           .filter((todo) => todo.status)
